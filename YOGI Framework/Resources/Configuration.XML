@@ -2,12 +2,12 @@
 <GeneralInformation>
   <ReportTitle>Execution Report</ReportTitle>
   <ReportName>TEST AUTOMATION REPORT</ReportName>
-  <Resources>C:\YOGI Framework\YOGI Framework\Resources</Resources>
-  <TestExcelPath>C:\YOGI Framework\YOGI Framework\Framework Driver Script\Framework Driver Sheet.xlsx</TestExcelPath>
+  <Resources>C:\NewFramework\YOGI Framework\Resources</Resources>
+  <TestExcelPath>C:\NewFramework\YOGI Framework\Framework Driver Script\Framework Driver Sheet.xlsx</TestExcelPath>
   <TestExcelName>Framework Driver Sheet</TestExcelName>
-  <DataTablesPath>C:\YOGI Framework\YOGI Framework\Resources\DataTables</DataTablesPath>
-  <LibrariesPath>C:\YOGI Framework\YOGI Framework\Resources\Libraries</LibrariesPath>
-  <RepositoriesPath>C:\YOGI Framework\YOGI Framework\Resources\Repositories</RepositoriesPath>
-  <DLLFilePath>C:\YOGI Framework\YOGI Framework\Resources\DLL Files</DLLFilePath>
-  <ResultsPath>C:\YOGI Framework\YOGI Framework\Results</ResultsPath>
+  <DataTablesPath>C:\NewFramework\YOGI Framework\Resources\DataTables</DataTablesPath>
+  <LibrariesPath>C:\NewFramework\YOGI Framework\Resources\Libraries</LibrariesPath>
+  <RepositoriesPath>C:\NewFramework\YOGI Framework\Resources\Repositories</RepositoriesPath>
+  <DLLFilePath>C:\NewFramework\YOGI Framework\Resources\DLL Files</DLLFilePath>
+  <ResultsPath>C:\NewFramework\YOGI Framework\Results</ResultsPath>
 </GeneralInformation>
