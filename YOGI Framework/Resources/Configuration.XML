@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<GeneralInformation>
+  <ReportTitle>Execution Report</ReportTitle>
+  <ReportName>TEST AUTOMATION REPORT</ReportName>
+  <Resources>C:\Users\SE99075\Desktop\YOGI Framework\Resources</Resources>
+  <TestExcelPath>C:\Users\SE99075\Desktop\YOGI Framework\Framework Driver Script\Framework Driver Sheet.xlsx</TestExcelPath>
+  <TestExcelName>TestData_Yogi1</TestExcelName>
+  <DataTablesPath>C:\Users\SE99075\Desktop\YOGI Framework\Resources\DataTables</DataTablesPath>
+  <LibrariesPath>C:\Users\SE99075\Desktop\YOGI Framework\Resources\Libraries</LibrariesPath>
+  <RepositoriesPath>C:\Users\SE99075\Desktop\YOGI Framework\Resources\Repositories</RepositoriesPath>
+  <DLLFilePath>C:\Users\SE99075\Desktop\YOGI Framework\Resources\DLL Files</DLLFilePath>
+  <ResultsPath>C:\Users\SE99075\Desktop\YOGI Framework\Results</ResultsPath>
+</GeneralInformation>

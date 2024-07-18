@@ -1,0 +1,419 @@
+﻿Public htmlReporter
+Function fnFormatDate(strDate,strSpecifiedFormat, strDelimiter)
+strDay = Day(strDate)
+strMon = Month(strDate)
+strYear = Year(strDate)
+If Len(strMon)=1 Then
+	strMon = "0"&strMon
+End If
+
+If Len(strDay)=1 Then
+	strDay = "0"&strDay
+End If
+
+Select Case (Ucase(strSpecifiedFormat))
+	Case "MM/DD/YYYY"
+		fnFormatDate = strMon&strDelimiter&strDay&strDelimiter&strYear
+	Case "YYYY/MM/DD"
+		fnFormatDate = strYear&strDelimiter&strMon&strDelimiter&strDay	
+	Case "DD/MM/YYYY"	
+		fnFormatDate = strDay&strDelimiter&strMon&strDelimiter&strYear	
+End Select
+
+End  Function
+
+
+'subOpenBrowser
+' ---------------
+' The sub opens a browser application with a specific URL. 
+'url - The browser URL.
+'closeThisBrowser - You can choose if close the browser application you want open.
+' mode - You can choose the mode of the browser (normal or incognito).
+' closeOtherBrowsers - You can choose if close the other browser application.
+''******************************************************************************************
+'Sub subOpenBrowser(byVal browser, byVal url, byVal mode, byVal closeThisBrowser, byVal closeOtherBrowsers)
+'	
+'	'Scegli che browser aprire
+'	Dim processo
+'	Select Case Trim(Ucase(browser))
+'		Case "CHROME"
+'			process = "chrome.exe"
+'		Case "EDGE"
+'			process = "msedge.exe"
+'		Case "FIREFOX"
+'			process = "firefox.exe"
+'	End Select
+'		
+'	'Make sure if the browser is open	
+'	Select Case Trim(Ucase(closeThisBrowser))
+'		Case "0", "NO"
+'			'No 
+'		Case "1", "YES"
+'			SystemUtil.CloseProcessByName process
+'	End Select
+'	
+'	Select Case Trim(Ucase(closeOtherBrowsers))
+'		Case "0", "NO"
+'			'No
+'		Case "1", "YES"
+'			Select Case Trim(Ucase(browser))
+'				Case "CHROME"
+'					SystemUtil.CloseProcessByName "msedge.exe"
+'					SystemUtil.CloseProcessByName "firefox.exe"
+'				Case "EDGE"
+'					SystemUtil.CloseProcessByName "chrome.exe"
+'					SystemUtil.CloseProcessByName "firefox.exe"
+'				Case "FIREFOX"
+'					SystemUtil.CloseProcessByName "chrome.exe"
+'					SystemUtil.CloseProcessByName "msedge.exe"
+'			End Select
+'	End Select
+'	
+''	mode_Minimized = 2 'Open in minimized mode
+'	mode_Maximized = 3 'Open in maximized mode
+'	'Browser opening mode selection
+'	Select Case Trim(Ucase(mode))
+'		Case 0, "NORMAL"
+'			SystemUtil.Run process, url, , , mode_Maximized
+'			Reporter.ReportEvent micDone, "The URL was loaded: "&url, "The "&Trim(Ucase(browser))&" browser was opened and the URL "&url&" loaded in standard mode"
+'		Case 1, "INCOGNITO"
+'			SystemUtil.Run process, " -incognito " & url, , , mode_Maximized
+'			Reporter.ReportEvent micDone, "The URL was loaded: "&url, "The "&Trim(Ucase(browser))&" browser was opened and the URL "&url&" loaded in incognito mode" 		
+'	End Select
+'	wait 2,500
+'	
+'	'Reset browser zoom to 100%
+'	Set myDeviceReplay = CreateObject("Mercury.DeviceReplay")
+'	Select Case Trim(Ucase(browser))
+'		Case "CHROME"
+'			myDeviceReplay.KeyDown 29 	'Send Left CTRL 
+'			myDeviceReplay.PressKey 11 	'Send 0
+'			myDeviceReplay.KeyUp 29 		'Send Left CTRL	
+'		Case "EDGE"
+'			myDeviceReplay.KeyDown 29 	'Send Left CTRL 
+'			myDeviceReplay.PressKey 11 	'Send 0
+'			myDeviceReplay.KeyUp 29 		'Send Left CTRL	
+'		Case "FIREFOX"
+'			processo = "Manage"
+'	End Select
+'	Set myDeviceReplay = Nothing
+'	wait 0,500
+'	
+'End Sub
+
+
+'subWaitObject
+' ---------------
+' The sub waits the existence of a specific object in the browser for a time. It can be useful for the syncronization.
+'If a loading icon appears, the sub wait 25 seconds before exit from the test iteration.
+'object - The object to wait.
+'timeout_s - The maximun waiting time.
+''******************************************************************************************
+Sub subWaitObject(byVal object, byVal timeout_s)
+		
+	Dim objExists
+	currentMode = Reporter.Filter
+	Reporter.Filter = rfEnableAll
+	defaultTimeout = Setting("DefaultTimeOut")		'acquisition Default Timeout (script)
+	Setting("DefaultTimeOut") = 50 					'millisecond
+	
+'	objExists = false
+	objError = false
+	loadingError = false
+	
+	objExists = object.Exist(0)
+	sCounter = 1 
+	Do While (objExists = false)
+		wait 2
+		If sCounter > timeout_s Then
+			loadingError = True
+			Exit Do
+		End If
+		objExists = object.Exist(0)
+	Loop	
+	If loadingError = True Then
+		ExitTestIIteration 
+	End If
+End Sub
+''******************************************************************************************
+
+Function Wait_Sync(Browser_Count)
+
+    nBrowser_Count = Browser_Count
+    If nBrowser_Count > 0 Then
+        waitCounter = 0
+        intStartTime = 0
+        Do
+            wait 1
+            waitCounter = waitCounter + 1
+            If (waitCounter = 120)  Then
+                Exit Do
+            End If
+            bPageExistFlag = Browser("CreationTime:=" & nBrowser_Count - 1).Page("title:=.*").Exist(0)
+
+        Loop While bPageExistFlag = False
+
+        Do
+            On Error Resume Next
+            Wait 0,500
+            waitCounter = 0
+            If bPageExistFlag = True Then
+                ReadyState_Val = Browser("CreationTime:=" & nBrowser_Count - 1).Page("index:=0").Object.ReadyState
+
+            Else
+                ReadyState_Val = "Loading"
+            End If
+
+            sReadyState_Val = CStr(ReadyState_Val)
+
+            If   intStartTime = 600  Then
+                'Print intStartTime
+                Exit Do
+            End If
+            intStartTime = intStartTime + 1
+            iFinalVal = Eval(InStr(sReadyState_Val,4) > 0 Or InStr(sReadyState_Val,"complete") > 0)
+
+        Loop Until iFinalVal = True
+    End If
+Wait 1
+End Function
+
+
+ Function Login(htmlReporter)
+ 'Attaching repository
+repositoryPath = "C:\Users\SE99075\Desktop\YOGI Framework\Resources\Repositories\DemoWebShop.tsr"
+RepositoriesCollection.RemoveAll
+RepositoriesCollection.Add repositoryPath
+
+strUserId = DataTable.Value("UserName", "Test Data")
+strPassword = DataTable.Value("Password", "Test Data")
+
+' strUserId ="automationuser@gmail.com"
+'strPassword = "AutomationUser@123"
+
+subOpenBrowser "https://demowebshop.tricentis.com/", "NORMAL", "YES", "YES"
+
+'SystemUtil.Run "Chrome.exe", "https://demowebshop.tricentis.com/"
+Wait_Sync(1)
+Browser("Demo Web Shop").Page("Demo Web Shop").Link("Log in").Click
+Wait_Sync(1)
+
+'Enter user ID
+Browser("Demo Web Shop").Page("Demo Web Shop. Login").WebEdit("Email").Set strUserId
+Wait_Sync(1)
+
+If Browser("Demo Web Shop").Page("Demo Web Shop. Login").WebEdit("Email").GetROProperty("value") = strUserId  Then
+	call htmlReporter.AddPassLog("Username is entered successfully",fnScreenshot())
+Else
+	call htmlReporter.AddFailLog("Username is NOT entered", fnScreenshot())	
+	ExitTest
+End If
+
+'Enter password
+Browser("Demo Web Shop").Page("Demo Web Shop. Login").WebEdit("Password").Set strPassword
+Wait_Sync(1)
+
+If Browser("Demo Web Shop").Page("Demo Web Shop. Login").WebEdit("Password").GetROProperty("value") = strPassword  Then
+	call htmlReporter.AddPassLog("Password is entered successfully",fnScreenshot())
+Else
+	call htmlReporter.AddFailLog("Password is NOT entered", fnScreenshot())	
+End If
+
+'Click on 'Login' button
+Browser("Demo Web Shop").Page("Demo Web Shop. Login").WebButton("Log in").Click
+Wait_Sync(1)
+
+'Verify user is logged in
+If Browser("Demo Web Shop").Page("Demo Web Shop").Link("Log out").Exist Then
+	call htmlReporter.AddPassLog("User is logged in successfully",fnScreenshot())
+	Browser("Demo Web Shop").Page("Demo Web Shop").Link("Log out").Click
+	Wait_Sync(1)
+Else
+	call htmlReporter.AddFailLog("User is NOT logged in", fnScreenshot())
+End If
+
+'Verify user is logged out
+If Browser("Demo Web Shop").Page("Demo Web Shop").Link("Log in").Exist Then
+	call htmlReporter.AddPassLog("User is logged out successfully",fnScreenshot())
+Else
+	call htmlReporter.AddFailLog("User is NOT logged out", fnScreenshot())
+End If
+
+'Close the browser
+Browser("Demo Web Shop").Close
+
+End Function
+
+
+' Function to read an XML value
+Function ReadXMLValue(xmlFilePath, xPath)
+
+' Load XML File
+Set xmlDoc = CreateObject("Microsoft.XMLDOM")
+xmlDoc.async = False
+xmlDoc.Load(xmlFilePath)
+
+If xmlDoc.parseError.errorCode <> 0 Then
+    Print "Error loading XML file: " & xmlDoc.parseError.reason
+Else
+    ' Extract value using XPath
+    Set node = xmlDoc.SelectSingleNode("//"&xPath)
+    If node Is Nothing Then
+        ReadXMLValue = ""
+    Else
+        ReadXMLValue = node.Text
+    End If
+End If
+
+' Clean up
+Set xmlDoc = Nothing
+Set node = Nothing	
+End Function
+
+Function fnScreenshot()
+    Dim ssnum, baseName, fileExtension, fileNumber, newFileNumber, newFileName
+    Dim screenshotAbsPath, screenshotRelPath, latestFile, filename, latestFileDate
+    Dim objFSO, objScreenshotFolder, objFile
+
+    ssnum = 1
+    baseName = "Screenshot"
+    fileExtension = ".png"
+    screenshotRelPath = "Screenshots\" & baseName & ssnum & fileExtension
+    screenshotAbsPath = Environment.Value("ScreenshotFolderPath") & "\" & baseName & ssnum & fileExtension
+
+    Set objFSO = CreateObject("Scripting.FileSystemObject")
+    Set objScreenshotFolder = objFSO.GetFolder(Environment.Value("ScreenshotFolderPath"))
+
+    ' Initialize variables for the latest file
+    latestFileDate = DateValue("01/01/1970")
+    filename = ""
+
+    ' Find the latest file in the folder
+    For Each objFile In objScreenshotFolder.Files
+        If objFile.DateLastModified > latestFileDate Then
+            latestFileDate = objFile.DateLastModified
+            filename = objFile.Name
+        End If
+    Next
+
+    If filename <> "" Then
+        ' Extract the base name (Screenshot), the number, and the file extension
+        fileNumber = Mid(filename, Len(baseName) + 1, InStrRev(filename, ".") - Len(baseName) - 1)
+
+        ' Increment the number
+        newFileNumber = CInt(fileNumber) + 1
+
+        ' Construct the new file name
+        newFileName = baseName & newFileNumber & fileExtension
+        screenshotRelPath = "Screenshots\" & newFileName
+        screenshotAbsPath = Environment.Value("ScreenshotFolderPath") & "\" & newFileName
+
+        ' Check if the file already exists
+        Do While objFSO.FileExists(screenshotAbsPath)
+            newFileNumber = newFileNumber + 1
+            newFileName = baseName & newFileNumber & fileExtension
+            screenshotRelPath = "Screenshots\" & newFileName
+            screenshotAbsPath = Environment.Value("ScreenshotFolderPath") & "\" & newFileName
+        Loop
+    End If
+
+    ' Capture the screenshot
+    Dim currentReportMode
+    currentReportMode = Reporter.Filter
+    Reporter.Filter = 2 ' rfEnableErrorsAndWarnings
+
+    If Browser("creationtime:=0").Exist(0) Then
+        Browser("creationtime:=0").CaptureBitmap screenshotAbsPath, True
+    Else
+        Desktop.CaptureBitmap screenshotAbsPath, True
+    End If
+
+    Reporter.Filter = currentReportMode
+
+    ' Return the relative path to the saved screenshot
+    fnScreenshot = screenshotRelPath
+End Function
+
+
+Sub subOpenBrowser(byVal url, byVal mode, byVal closeThisBrowser, byVal closeOtherBrowsers)
+	 strBrowserSelection = Environment.Value("Browser")
+	'Scegli che browser aprire
+	Dim processo
+	Select Case Trim(Ucase(strBrowserSelection))
+		Case "CHROME"
+			process = "chrome.exe"
+		Case "EDGE"
+			process = "msedge.exe"
+		Case "FIREFOX"
+			process = "firefox.exe"
+	End Select
+		
+	'Make sure if the browser is open	
+	Select Case Trim(Ucase(closeThisBrowser))
+		Case "0", "NO"
+			'No 
+		Case "1", "YES"
+			SystemUtil.CloseProcessByName process
+	End Select
+	
+	Select Case Trim(Ucase(closeOtherBrowsers))
+		Case "0", "NO"
+			'No
+		Case "1", "YES"
+			Select Case Trim(Ucase(strBrowserSelection))
+				Case "CHROME"
+					SystemUtil.CloseProcessByName "msedge.exe"
+					SystemUtil.CloseProcessByName "firefox.exe"
+				Case "EDGE"
+					SystemUtil.CloseProcessByName "chrome.exe"
+					SystemUtil.CloseProcessByName "firefox.exe"
+				Case "FIREFOX"
+					SystemUtil.CloseProcessByName "chrome.exe"
+					SystemUtil.CloseProcessByName "msedge.exe"
+			End Select
+	End Select
+	
+'	mode_Minimized = 2 'Open in minimized mode
+	mode_Maximized = 3 'Open in maximized mode
+	'Browser opening mode selection
+	Select Case Trim(Ucase(mode))
+		Case "0", "NORMAL"
+			SystemUtil.Run process, url, , , mode_Maximized
+			Reporter.ReportEvent micDone, "The URL was loaded: "&url, "The "&Trim(Ucase(strBrowserSelection))&" browser was opened and the URL "&url&" loaded in standard mode"
+		Case "1", "INCOGNITO"
+			SystemUtil.Run process, " -incognito " & url, , , mode_Maximized
+			Reporter.ReportEvent micDone, "The URL was loaded: "&url, "The "&Trim(Ucase(strBrowserSelection))&" browser was opened and the URL "&url&" loaded in incognito mode" 		
+	End Select
+	wait 2,500
+	
+	'Reset browser zoom to 100%
+	Set myDeviceReplay = CreateObject("Mercury.DeviceReplay")
+	Select Case Trim(Ucase(strBrowserSelection))
+		Case "CHROME"
+			myDeviceReplay.KeyDown 29 	'Send Left CTRL 
+			myDeviceReplay.PressKey 11 	'Send 0
+			myDeviceReplay.KeyUp 29 		'Send Left CTRL	
+		Case "EDGE"
+			myDeviceReplay.KeyDown 29 	'Send Left CTRL 
+			myDeviceReplay.PressKey 11 	'Send 0
+			myDeviceReplay.KeyUp 29 		'Send Left CTRL	
+		Case "FIREFOX"
+			processo = "Manage"
+	End Select
+	Set myDeviceReplay = Nothing
+	wait 0,500
+	
+End Sub
+
+
+
+  
+
+
+
+
+
+
+
+
+

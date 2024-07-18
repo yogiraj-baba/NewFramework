@@ -1,0 +1,1193 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Execution Report</title>
+  <link rel="apple-touch-icon" href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png">
+  <link rel="shortcut icon" href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png">
+  <link href="https://cdn.rawgit.com/extent-framework/extent-github-cdn/cd00a5e/spark/css/style.css" rel="stylesheet" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style> </style>
+</head>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+
+
+
+<body class="test-view  standard">
+    <div class="app header-dark side-nav-folded">
+        <div class="layout">
+            <div class="header navbar">
+    <div class="header-container">
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo logo-dark" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+            <div class="logo logo-white" style="background-image: url('https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png')"></div>
+          </a>
+        </div>
+        <ul class="nav-left">
+          <li>
+            <a class="sidenav-fold-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a class="sidenav-expand-toggler" href="javascript:void(0);">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li class="search-box">
+            <a class="search-toggle" href="javascript:void(0);">
+              <i class="search-icon fa fa-search"></i>
+              <i class="search-icon-close fa fa-close"></i>
+            </a>
+          </li>
+          <li class="search-input">
+            <input id="search-tests" class="form-control" type="text" placeholder="Type to search...">
+          </li>
+        </ul>
+        <ul class="nav-right">
+          <li class="m-r-10">
+            <a href="#">
+              <span class="badge badge-primary">TEST AUTOMATION REPORT</span>
+            </a>
+          </li>
+            <li class="m-r-10">
+                <a href="#">
+                    <span class="badge badge-primary">17-06-2024 21:11:41</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+            <div class="side-nav side-nav-folded">
+  <div class="side-nav-inner">
+    <ul class="side-nav-menu scrollable">
+      <li class="nav-item dropdown">
+        <a id="nav-test" class="dropdown-toggle" href="index.html">
+          <span class="icon-holder">
+            <i class="fa fa-align-left"></i>
+          </span>
+          <span class="title">Tests</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a id="nav-tag" class="dropdown-toggle" href="tag.html">
+          <span class="icon-holder">
+            <i class="fa fa-tag"></i>
+          </span>
+          <span class="title">Tags</span>
+        </a>
+      </li>
+            <li class="nav-item dropdown">
+        <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
+          <span class="icon-holder">
+            <i class="fa fa-bar-chart"></i>
+          </span>
+          <span class="title">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="side-nav-controls">
+    <ul>
+      <li>
+        <a href="#" class="lightsout" style="color:#8a8a8a;">
+          <i class="fa fa-desktop"></i>"</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+            <div class="page-container">
+                <div class="main-content">
+                    <div class="test-wrapper row">
+                        <div class="test-list">
+                            <div class="test-list-tools">
+                                <ul class="tools pull-left">
+                                    <li>
+                                        <a href="">
+                                            <span class="font-size-14">Tests</span>
+                                        </a>
+                                    </li> 
+                                </ul>
+                                <ul class="tools text-right">
+									<li class="user-profile dropdown dropdown-animated scale-left">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											<i class="fa fa-exclamation-circle"></i>
+										</a>
+										<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a status="pass" class="dropdown-item" href="#"><span>Pass</span><span class="status success pull-right"></span></a>																																																																		<div class="dropdown-divider"></div>
+											<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+										</ul>
+									</li>
+                                    <li class="user-profile dropdown dropdown-animated scale-left">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											<i class="fa fa-user"></i>
+										</a>
+										<ul id="author-toggle" class="dropdown-menu dropdown-md p-v-0">
+												<a class="dropdown-item" href="#">Yogiraj</a>
+										</ul>
+                                    </li>
+																		<li class="user-profile dropdown dropdown-animated scale-left">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											<i class="fa fa-tag"></i>
+										</a>
+										<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+												<a class="dropdown-item" href="#">Sanity</a>
+												<a class="dropdown-item" href="#">Regression</a>
+										</ul>
+                                    </li>
+									                                </ul>
+                            </div>
+                            <div class="test-list-wrapper scrollable">
+                                <ul class="test-list-item">
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Sanity"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-1 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:31s+646ms</p> 
+													<span class="datetime">21:11:41 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-1 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:11:41</span>
+															<span class='badge badge-danger'>17-06-2024 21:12:13</span>
+															<span class='badge badge-default'>0h:0m:31s+646ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Sanity</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:12:04</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot1.png' src='Screenshots\Screenshot1.png' data-src='Screenshots\Screenshot1.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:12:06</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot2.png' src='Screenshots\Screenshot2.png' data-src='Screenshots\Screenshot2.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:12:10</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot3.png' src='Screenshots\Screenshot3.png' data-src='Screenshots\Screenshot3.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:12:13</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot4.png' src='Screenshots\Screenshot4.png' data-src='Screenshots\Screenshot4.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Sanity"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-2 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:25s+135ms</p> 
+													<span class="datetime">21:12:14 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-2 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:12:14</span>
+															<span class='badge badge-danger'>17-06-2024 21:12:40</span>
+															<span class='badge badge-default'>0h:0m:25s+135ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Sanity</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:12:31</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot5.png' src='Screenshots\Screenshot5.png' data-src='Screenshots\Screenshot5.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:12:33</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot6.png' src='Screenshots\Screenshot6.png' data-src='Screenshots\Screenshot6.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:12:37</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot7.png' src='Screenshots\Screenshot7.png' data-src='Screenshots\Screenshot7.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:12:40</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot8.png' src='Screenshots\Screenshot8.png' data-src='Screenshots\Screenshot8.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Sanity"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-3 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:24s+106ms</p> 
+													<span class="datetime">21:12:41 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-3 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:12:41</span>
+															<span class='badge badge-danger'>17-06-2024 21:13:05</span>
+															<span class='badge badge-default'>0h:0m:24s+106ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Sanity</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:12:57</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot9.png' src='Screenshots\Screenshot9.png' data-src='Screenshots\Screenshot9.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:12:59</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot10.png' src='Screenshots\Screenshot10.png' data-src='Screenshots\Screenshot10.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:13:02</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot11.png' src='Screenshots\Screenshot11.png' data-src='Screenshots\Screenshot11.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:13:05</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot12.png' src='Screenshots\Screenshot12.png' data-src='Screenshots\Screenshot12.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Sanity"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-4 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:24s+865ms</p> 
+													<span class="datetime">21:13:06 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-4 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:13:06</span>
+															<span class='badge badge-danger'>17-06-2024 21:13:31</span>
+															<span class='badge badge-default'>0h:0m:24s+865ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Sanity</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:13:22</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot13.png' src='Screenshots\Screenshot13.png' data-src='Screenshots\Screenshot13.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:13:25</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot14.png' src='Screenshots\Screenshot14.png' data-src='Screenshots\Screenshot14.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:13:28</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot15.png' src='Screenshots\Screenshot15.png' data-src='Screenshots\Screenshot15.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:13:31</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot16.png' src='Screenshots\Screenshot16.png' data-src='Screenshots\Screenshot16.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Sanity"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-5 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:24s+420ms</p> 
+													<span class="datetime">21:13:32 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-5 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:13:32</span>
+															<span class='badge badge-danger'>17-06-2024 21:13:57</span>
+															<span class='badge badge-default'>0h:0m:24s+420ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Sanity</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:13:48</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot17.png' src='Screenshots\Screenshot17.png' data-src='Screenshots\Screenshot17.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:13:51</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot18.png' src='Screenshots\Screenshot18.png' data-src='Screenshots\Screenshot18.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:13:54</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot19.png' src='Screenshots\Screenshot19.png' data-src='Screenshots\Screenshot19.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:13:57</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot20.png' src='Screenshots\Screenshot20.png' data-src='Screenshots\Screenshot20.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Sanity"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-6 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:24s+334ms</p> 
+													<span class="datetime">21:13:58 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-6 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:13:58</span>
+															<span class='badge badge-danger'>17-06-2024 21:14:22</span>
+															<span class='badge badge-default'>0h:0m:24s+334ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Sanity</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:14:13</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot21.png' src='Screenshots\Screenshot21.png' data-src='Screenshots\Screenshot21.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:14:16</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot22.png' src='Screenshots\Screenshot22.png' data-src='Screenshots\Screenshot22.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:14:19</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot23.png' src='Screenshots\Screenshot23.png' data-src='Screenshots\Screenshot23.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:14:22</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot24.png' src='Screenshots\Screenshot24.png' data-src='Screenshots\Screenshot24.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Regression"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-7 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:24s+999ms</p> 
+													<span class="datetime">21:14:24 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-7 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:14:24</span>
+															<span class='badge badge-danger'>17-06-2024 21:14:49</span>
+															<span class='badge badge-default'>0h:0m:24s+999ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:14:40</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot25.png' src='Screenshots\Screenshot25.png' data-src='Screenshots\Screenshot25.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:14:43</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot26.png' src='Screenshots\Screenshot26.png' data-src='Screenshots\Screenshot26.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:14:46</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot27.png' src='Screenshots\Screenshot27.png' data-src='Screenshots\Screenshot27.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:14:49</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot28.png' src='Screenshots\Screenshot28.png' data-src='Screenshots\Screenshot28.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Regression"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-8 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:24s+823ms</p> 
+													<span class="datetime">21:14:50 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-8 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:14:50</span>
+															<span class='badge badge-danger'>17-06-2024 21:15:15</span>
+															<span class='badge badge-default'>0h:0m:24s+823ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:15:05</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot29.png' src='Screenshots\Screenshot29.png' data-src='Screenshots\Screenshot29.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:15:08</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot30.png' src='Screenshots\Screenshot30.png' data-src='Screenshots\Screenshot30.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:15:11</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot31.png' src='Screenshots\Screenshot31.png' data-src='Screenshots\Screenshot31.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:15:15</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot32.png' src='Screenshots\Screenshot32.png' data-src='Screenshots\Screenshot32.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Regression"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-9 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:31s+309ms</p> 
+													<span class="datetime">21:15:16 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-9 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:15:16</span>
+															<span class='badge badge-danger'>17-06-2024 21:15:48</span>
+															<span class='badge badge-default'>0h:0m:31s+309ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:15:36</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot33.png' src='Screenshots\Screenshot33.png' data-src='Screenshots\Screenshot33.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:15:39</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot34.png' src='Screenshots\Screenshot34.png' data-src='Screenshots\Screenshot34.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:15:44</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot35.png' src='Screenshots\Screenshot35.png' data-src='Screenshots\Screenshot35.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:15:48</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot36.png' src='Screenshots\Screenshot36.png' data-src='Screenshots\Screenshot36.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Regression"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-10 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:24s+059ms</p> 
+													<span class="datetime">21:15:49 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-10 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:15:49</span>
+															<span class='badge badge-danger'>17-06-2024 21:16:13</span>
+															<span class='badge badge-default'>0h:0m:24s+059ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:16:05</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot37.png' src='Screenshots\Screenshot37.png' data-src='Screenshots\Screenshot37.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:16:08</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot38.png' src='Screenshots\Screenshot38.png' data-src='Screenshots\Screenshot38.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:16:11</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot39.png' src='Screenshots\Screenshot39.png' data-src='Screenshots\Screenshot39.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:16:13</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot40.png' src='Screenshots\Screenshot40.png' data-src='Screenshots\Screenshot40.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Regression"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-11 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:23s+391ms</p> 
+													<span class="datetime">21:16:15 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-11 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:16:15</span>
+															<span class='badge badge-danger'>17-06-2024 21:16:38</span>
+															<span class='badge badge-default'>0h:0m:23s+391ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:16:30</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot41.png' src='Screenshots\Screenshot41.png' data-src='Screenshots\Screenshot41.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:16:32</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot42.png' src='Screenshots\Screenshot42.png' data-src='Screenshots\Screenshot42.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:16:35</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot43.png' src='Screenshots\Screenshot43.png' data-src='Screenshots\Screenshot43.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:16:38</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot44.png' src='Screenshots\Screenshot44.png' data-src='Screenshots\Screenshot44.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Regression"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-12 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:25s+869ms</p> 
+													<span class="datetime">21:16:40 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-12 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:16:40</span>
+															<span class='badge badge-danger'>17-06-2024 21:17:06</span>
+															<span class='badge badge-default'>0h:0m:25s+869ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:16:57</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot45.png' src='Screenshots\Screenshot45.png' data-src='Screenshots\Screenshot45.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:17:00</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot46.png' src='Screenshots\Screenshot46.png' data-src='Screenshots\Screenshot46.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:17:03</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot47.png' src='Screenshots\Screenshot47.png' data-src='Screenshots\Screenshot47.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:17:06</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot48.png' src='Screenshots\Screenshot48.png' data-src='Screenshots\Screenshot48.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Regression"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-13 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:24s+491ms</p> 
+													<span class="datetime">21:17:07 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-13 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:17:07</span>
+															<span class='badge badge-danger'>17-06-2024 21:17:31</span>
+															<span class='badge badge-default'>0h:0m:24s+491ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:17:22</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot49.png' src='Screenshots\Screenshot49.png' data-src='Screenshots\Screenshot49.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:17:25</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot50.png' src='Screenshots\Screenshot50.png' data-src='Screenshots\Screenshot50.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:17:28</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot51.png' src='Screenshots\Screenshot51.png' data-src='Screenshots\Screenshot51.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:17:31</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot52.png' src='Screenshots\Screenshot52.png' data-src='Screenshots\Screenshot52.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Regression"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-14 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:24s+189ms</p> 
+													<span class="datetime">21:17:32 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-14 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:17:32</span>
+															<span class='badge badge-danger'>17-06-2024 21:17:57</span>
+															<span class='badge badge-default'>0h:0m:24s+189ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:17:48</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot53.png' src='Screenshots\Screenshot53.png' data-src='Screenshots\Screenshot53.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:17:50</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot54.png' src='Screenshots\Screenshot54.png' data-src='Screenshots\Screenshot54.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:17:54</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot55.png' src='Screenshots\Screenshot55.png' data-src='Screenshots\Screenshot55.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:17:57</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot56.png' src='Screenshots\Screenshot56.png' data-src='Screenshots\Screenshot56.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+										<li class="test-item" status="pass" author="Yogiraj" device="" tag="Regression"> 
+											<div class="status-avatar pass-bg">
+												<i class="fa fa-check text-white"></i>
+											</div>
+											<div class="open-test">
+												<div class="test-detail"> 
+													<p class="name">TC-15 - Login To DemoWebShop</p> 
+													<p class="duration text-sm">0h:0m:24s+478ms</p> 
+													<span class="datetime">21:17:58 PM</span>
+												</div>
+											</div>
+											<div class="test-contents d-none">
+												<div class="detail-head">
+													<div class="p-v-10 d-inline-block">	
+														<div class="info">
+															<h5 class="test-status text-pass">TC-15 - Login To DemoWebShop</h5>
+															<span class='badge badge-success'>17-06-2024 21:17:58</span>
+															<span class='badge badge-danger'>17-06-2024 21:18:23</span>
+															<span class='badge badge-default'>0h:0m:24s+478ms</span>
+														</div>
+														<div class="m-t-15">
+		                                        				<div class="attributes">
+				<span class="badge badge-pill badge-default"><i class="fa fa-user-o"></i> Yogiraj</span> 
+						<span class="badge badge-pill badge-default"><i class="fa fa-tag"></i> Regression</span> 	
+			</div>
+
+														</div>
+																											</div>
+												</div>
+<div class="detail-body mt-4">												
+	
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:18:13</td>
+				<td>
+Username is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot57.png' src='Screenshots\Screenshot57.png' data-src='Screenshots\Screenshot57.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:18:16</td>
+				<td>
+Password is entered successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot58.png' src='Screenshots\Screenshot58.png' data-src='Screenshots\Screenshot58.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:18:20</td>
+				<td>
+User is logged in successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot59.png' src='Screenshots\Screenshot59.png' data-src='Screenshots\Screenshot59.png'>				</td>
+			</tr>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>21:18:23</td>
+				<td>
+User is logged out successfully					<img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Screenshots\Screenshot60.png' src='Screenshots\Screenshot60.png' data-src='Screenshots\Screenshot60.png'>				</td>
+			</tr>
+	</tbody>
+</table>
+
+</div>    
+											</div>
+										</li>
+                                </ul>    
+                            </div>
+                        </div>
+                        <div class="test-content scrollable">
+                            <div class="test-content-tools">
+                                <ul>
+                                    <li>
+                                        <a class="back-to-test" href="javascript:void(0)">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="test-content-detail">
+                                <div class="detail-body"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script type='text/javascript'>
+	
+</script>
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/f97b667/spark/js/script.js"></script>
+
+</body>
+
+</html>
