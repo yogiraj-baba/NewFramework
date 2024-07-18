@@ -1,12 +1,24 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 # SharpDevelop 4.1.3.0
+Project("") = "Framework Driver Script", "Framework Driver Script\Test.tsp", "F1F23F3D-C591-48DF-A370-ED918A42A954"
+	ProjectSection(ProjectMetadata) = HP.UFT.ProjectSystem.Dynamic.ProjectMetadata
+		PathInformation = C:\NewFramework\YOGI Framework\Framework Driver Script\Framework Driver Script\Test.tsp
+		Keyword = QTP
+		OpenAsReadOnly = False
+		BaselineId = 
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		F1F23F3D-C591-48DF-A370-ED918A42A954.Debug|Any CPU.Build.0 = Debug|Any CPU
+		F1F23F3D-C591-48DF-A370-ED918A42A954.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		F1F23F3D-C591-48DF-A370-ED918A42A954.Release|Any CPU.Build.0 = Release|Any CPU
+		F1F23F3D-C591-48DF-A370-ED918A42A954.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,16 +1,16 @@
-testPath = "C:\YOGI Framework\YOGI Framework\Framework Driver Script\Framework Driver Script"
+testPath = "C:\NewFramework\YOGI Framework\Framework Driver Script\Framework Driver Script\Test.tsp"
 Dim objFSO
 Set objFSO = CreateObject("Scripting.FileSystemObject")
-DoesFolderExist = objFSO.FolderExists(testPath)
+DoesFileExist = objFSO.FileExists(testPath)
 Set objFSO = Nothing
-If DoesFolderExist Then
+If DoesFileExist Then
 Dim qtApp
 Dim qtTest
 Dim qtResultsOpt
 Set qtApp = CreateObject("QuickTest.Application")
 qtApp.Launch
-qtApp.Visible = False
-qtApp.Open testPath, False
+qtApp.Visible = True
+qtApp.Open testPath, True
 Set qtTest = qtApp.Test
 Set qtResultsOpt = CreateObject("QuickTest.RunResultsOptions")
 qtResultsOpt.ResultsLocation = "C:\YOGI Framework\YOGI Framework\Framework Driver Script\Framework Driver Script\Result"
